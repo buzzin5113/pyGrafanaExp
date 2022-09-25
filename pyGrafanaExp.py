@@ -1,10 +1,8 @@
 import secret
-import setup
 import os
 import requests
 from requests.structures import CaseInsensitiveDict
 import telegram
-import pdfkit
 from html2image import Html2Image
 
 
@@ -22,7 +20,6 @@ def get_pic(url, token, filename):
 
 def telegram_send_image(path):
     bot = telegram.Bot(secret.telegram_token)
-    #path = './images/' + path
     try:
         print("Start send")
         bot.send_photo(secret.chat_id, photo=open(path, 'rb'))
@@ -56,6 +53,7 @@ def main():
     #telegram_send_image('dbfsutil.png')
     #telegram_send_image('dbconn.png')
     #telegram_send_image('dbcommroll.png')
+
 
 if __name__ == '__main__':
     main()
