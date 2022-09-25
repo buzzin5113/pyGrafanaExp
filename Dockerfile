@@ -1,5 +1,7 @@
 FROM python
 
+env POETRY_VERSION=1.2.0
+
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
 WORKDIR /pkgs/html2image
